@@ -28,8 +28,4 @@ export function jsonify(val) {
   return JSON.parse(JSON.stringify(val));
 }
 
-export async function getCollection(collection) {
-  return await (await dbPromise).db().collection(collection);
-}
-
 export default dbPromise;
