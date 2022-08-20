@@ -1,12 +1,10 @@
 import { useRef, useEffect } from "react";
-import TextArea from "../text-area";
 
 export default function TextField({
   value,
   label,
   className,
   focused = false,
-  multiline = false,
   onChange = () => {},
   ...rest
 }) {
@@ -16,9 +14,6 @@ export default function TextField({
     if (!focused) return;
     ref.current.focus();
   }, [focused]);
-
-  if (multiline)
-    return <TextArea {...{ value, label, onChange, focused, ...rest }} />;
 
   return (
     <div>
